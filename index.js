@@ -2,6 +2,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+// TODO: Create a function to write README file
+function writeToFile(name, description) {
+    console.log(writeToFile);
+}
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -53,12 +58,13 @@ const questions = [
 
 ];
 
-inquirer.prompt(questions).then(answers); console.log(JSON.stringify(answers));
+inquirer.prompt(questions).then((answers) => {
+    // here `answers` exist within the scope of the `.then` callback 
+    console.log(JSON.stringify(answers));
+  });
 
-// TODO: Create a function to write README file
-function writeToFile(name, description) {
-    console.log(writeToFile);
-}
+
+
 // TODO: Create a function to initialize app
 function init() { }
 
