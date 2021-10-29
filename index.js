@@ -6,5 +6,8 @@ const questions = require('./utils/questions');
 
 inquirer.prompt(questions).then((response) => {
     generateMarkdown(response);
-    fs.writeFile('GENREADME.md', generateMarkdown(response), 'utf-8');
+    fs.writeFile('README.md', generateMarkdown(response), 'utf-8', (err) => {
+        if (err) return console.log(err);
+        console.log('Success!')
+    });
   });

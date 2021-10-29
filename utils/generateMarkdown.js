@@ -44,14 +44,22 @@ switch (license) {
 
 }
 
+// //TODO: Create a function to loop through description
+// function generatDescription(questions) {
+//   const question = questions.messege;
+//   for (let i = 0; i < question.length; i++) {
+//     if(data.description)
+//     return question
+//   }
+
+// }
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
 
-  # Title
-  ${data.title}
   ## Table of Contents
   - [Description](#Description)
   - [Installation](#Installation)
@@ -60,22 +68,23 @@ function generateMarkdown(data) {
   - [Tests](#Tests)
   - [License](#License)
 
-  ##Description
+  ## Description
+  
   ${data.description}
 
-  ##Installatoion
-  ${data.installatoion}
+  ## Installatoion
+  ${data.installation}
 
-  ##Usage
+  ## Usage
   ${data.usage}
 
-  ##Contribution
+  ## Contribution
   ${data.contribution}
 
-  ##Test
+  ## Test
   ${data.test}
 
-  ##License
+  ## License
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
 
