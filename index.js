@@ -1,19 +1,10 @@
 // TODO: Include packages needed for this application
-const fs = require('fs');
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 const questions = require('./utils/questions');
 
-
-
-
-inquirer.prompt(questions).then((answers) => {
-    console.log(JSON.stringify(answers));
+inquirer.prompt(questions).then((response) => {
+    generateMarkdown(response);
+    fs.writeFile('GENREADME.md', generateMarkdown(response), 'utf-8');
   });
-
-
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
