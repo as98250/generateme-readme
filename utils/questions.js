@@ -42,7 +42,7 @@ const questions = [
         'MIT',
         'GNU GPLv3',
         'Apache',
-        'Mosilla Public License 2.0'
+        'ISC'
     ]
 }
 
